@@ -1,7 +1,7 @@
 # Blog
 [![Build Status](https://dev.azure.com/rtur/Blogifier/_apis/build/status/blogifierdotnet.Blogifier)](https://dev.azure.com/rtur/Blogifier/_build/latest?definitionId=3)
 
-The blog is a forked customized version of Blogifier. [(https://github.com/blogifierdotnet)] is a CMS written is ASP .NET MVC with a Blazor admin panel. 
+The blog is a forked customized version of Blogifier. https://github.com/blogifierdotnet is a CMS written is ASP .NET MVC with a Blazor admin panel. 
 
 
 ## System Requirements
