@@ -1,11 +1,7 @@
-# Blogifier
+# Blog
 [![Build Status](https://dev.azure.com/rtur/Blogifier/_apis/build/status/blogifierdotnet.Blogifier)](https://dev.azure.com/rtur/Blogifier/_build/latest?definitionId=3)
 
-Blogifier is a single-user personal blog written in ASP.NET Core MVC and Blazor. It is small, easy to use and highly customizable 
-via theming engine and Blazor components.
-
-> If you are looking for a multi-user Angular version of Blogifier, please find it under [Blogifier.SPA](https://github.com/blogifierdotnet/Blogifier.SPA) repository.
-> Both versions are fully supported.
+The blog is a forked customized version of Blogifier. [Blogifier](https://github.com/blogifierdotnet) is a CMS written is ASP .NET MVC with a Blazor admin panel. See below for more information about Blogifier. 
 
 
 ## System Requirements
@@ -17,7 +13,7 @@ via theming engine and Blazor components.
 
 ## Getting Started
 
-1. Clone or download source code
+1. Clone or download source code [Here](https://github.com/blogifierdotnet)
 2. Run application in Visual Studio or using your code editor
 3. Use admin/admin to log in
 
@@ -36,11 +32,6 @@ Uses Markdown editor with built-in support for common functionality to make writ
 1. Built-in themes - there are number of themes to choose ranging from simple and minimalistic to media-rich and sophisticated and list is growing.
 2. Social buttons - no programming required, just add your social accounts
 3. Themes are easy to adopt or build from scratch with minimal effort
-
-#### Newsletter
-Visitors can subscribe to the blog to be notified on new publications by email via 
-[newsletter](https://github.com/blogifierdotnet/Blogifier/blob/master/docs/Newsletter.md) (requires 
-[SendGrid](https://github.com/blogifierdotnet/Blogifier/blob/master/docs/SendGrid.md) email account)
 
 #### Localization
 Uses excellent intuitive [JSON localizer](https://github.com/blogifierdotnet/Blogifier/blob/master/docs/Localization.md) 
