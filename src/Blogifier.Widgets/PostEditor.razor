@@ -92,13 +92,39 @@
                     </div>
                     @if (Post.Id > 0)
                     {
-                    <div class="input-group">
-                        <label>@Localizer["cover"]</label>
-                        <input type="text" class="form-control txt-upload" @bind="Post.Cover" name="cover" id="cover" readonly="" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-secondary btn-upload" onclick="return fileManager.uploadClick('@UploadType.PostCover', @Post.Id);" type="button"> Select</button>
-                        </span>
-                    </div>
+                        <div class="input-group">
+                            <label>@Localizer["cover"]</label>
+                            <input type="text" class="form-control txt-upload" @bind="Post.Cover" name="cover" id="cover" readonly="" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary btn-upload" onclick="return fileManager.uploadClick('@UploadType.PostCover', @Post.Id);" type="button"> Select</button>
+                            </span>
+                        </div>
+                    }
+                    @if (SocialFields.Any())
+                    {
+                        <ul class="bf-list bf-posts-list d-block" aria-label="drafts">
+                            @foreach (var field in SocialFields)
+                            {
+                                <li class="bf-list-item d-flex align-items-center">
+                                    <span class="bf-list-social-icon">
+                                        <i class="fa @field.Icon" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="bf-list-item-link">@field.Title</span>
+
+                                    <a href="#" class="bf-list-item-status bf-list-item-status-link ml-auto">
+                                        @field.Rank
+                                    </a>
+
+                                    <a href="#" target="_blank" class="bf-list-item-status bf-list-item-status-link ml-auto btn-remove" @onclick="(() => RemoveField(field.Id))" @onclick:preventDefault>
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="notfound" style="margin-left: 20px">@Localizer["empty"]</div>
                     }
                 </fieldset>          
             </div>

@@ -10,6 +10,7 @@ using Microsoft.FeatureManagement;
 using Microsoft.JSInterop;
 using Sotsera.Blazor.Toaster;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,6 +26,10 @@ namespace Blogifier.Widgets
         public EventCallback<string> HideCallback { get; set; }       
         [Parameter] 
         public EventCallback<string> OnUpdate { get; set; }
+
+        protected List<SocialField> SocialFields { get; set; }
+        public string Level { get; set; }
+        protected SocialField CurrentField { get; set; }
 
         [Inject]
         protected IDataService DataService { get; set; }
@@ -48,6 +53,8 @@ namespace Blogifier.Widgets
 
         protected override async Task OnInitializedAsync()
         {
+            await Load();
+
             if (PostId > 0)
             {
                 Post = await DataService.BlogPosts.GetItem(p => p.Id == PostId);
@@ -58,6 +65,14 @@ namespace Blogifier.Widgets
                 Post = new PostItem { Cover = blog.Cover, Content = "", Title = "" };
             }
             Cover = $"background-image: url({AppSettings.SiteRoot}{Post.Cover})";
+            StateHasChanged();
+        }
+
+        protected async Task Load()
+        {
+            int authorId = await GetAuthorId();
+            CurrentField = new SocialField { AuthorId = authorId };
+            SocialFields = await DataService.CustomFields.GetSocial(authorId);
             StateHasChanged();
         }
 
@@ -199,10 +214,40 @@ namespace Blogifier.Widgets
             }
             return slug;
         }
+
+        private async Task<int> GetAuthorId()
+        {
+            int authorId = 0;
+            if (Level == "author")
+            {
+                var authState = await AuthenticationStateTask;
+                var author = await DataService.Authors.GetItem(
+                    a => a.AppUserName == authState.User.Identity.Name);
+                return author.Id;
+            }
+            return authorId;
+        }
+
+        protected async Task RemoveField(int id)
+        {
+            var existing = DataService.CustomFields.Single(f => f.Id == id);
+            if (existing != null)
+            {
+                DataService.CustomFields.Remove(existing);
+                DataService.Complete();
+                Toaster.Success(Localizer["completed"]);
+                await Load();
+            }
+            else
+            {
+                Toaster.Error($"Error removing field #{id}");
+            }
+        }
     }
 
     public enum PostAction
     {
         Save, Publish, Unpublish
     }
+
 }
