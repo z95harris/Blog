@@ -13,7 +13,7 @@ The blog is a forked customized version of Blogifier. [Blogifier](https://github
 
 ## Getting Started
 
-1. Clone or download source code [Here](https://github.com/blogifierdotnet)
+1. Clone or download source code [Here](https://github.com/z95harris/Blog)
 2. Run application in Visual Studio or using your code editor
 3. Use admin/admin to log in
 
@@ -23,8 +23,7 @@ The blog is a forked customized version of Blogifier. [Blogifier](https://github
 Uses Markdown editor with built-in support for common functionality to make writing posts easy and productive process.
 
 1. File upload - support for file and image upload with a click of a button
-2. [HTML5 video/audio tags](https://github.com/blogifierdotnet/Blogifier/blob/master/docs/VideoAudio.md) - 
-    upload and playback video and audio, YouTube video playback
+2. HTML5 video/audio tags upload and playback video and audio, YouTube video playback
 3. Thumbnail generation - uploading large image automatically generates corresponding image thumbnail
 
 #### Theme engine
@@ -34,8 +33,7 @@ Uses Markdown editor with built-in support for common functionality to make writ
 3. Themes are easy to adopt or build from scratch with minimal effort
 
 #### Localization
-Uses excellent intuitive [JSON localizer](https://github.com/blogifierdotnet/Blogifier/blob/master/docs/Localization.md) 
-with number of preset languages. If your language is missing it can be easily added to the list
+Uses excellent intuitive JSON localizer with a number of preset languages. If your language is missing it can be easily added to the list
 
 #### RSS feed
 Supports standard RSS syndication feed
@@ -43,31 +41,7 @@ Supports standard RSS syndication feed
 #### Search
 Quick content search across the blog posts
 
-#### Disqus comments
-Using Disqus as a commenting service, here are 
-[instructions](https://github.com/blogifierdotnet/Blogifier/blob/master/docs/ScriptIncludes.md) on how to setup and configure
-
-#### Google Analytics
-Google Analytics can be added to the site by the blogger as described in 
-the [documentation](https://github.com/blogifierdotnet/Blogifier/blob/master/docs/ScriptIncludes.md) 
-
 #### Multi-platform support
 You can host your blog on Windows or Lunux server, use SQLite, SQL Server, MySQL or PostgreSQL databases out of the box. 
 Even if you don't care about technology used, flexibility in hosting helps save money and make many decisions easier.
 
-## Other Projects
-There are two applications currently supported -
-1. Main blogifier application is MVC-based with Blazor admin (this repository)
-2. [SPA application](https://github.com/blogifierdotnet/Blogifier.SPA) with Angular front-end on top of ASP.NET Core web APIs
-
-![blogifier-dgm](https://user-images.githubusercontent.com/1932785/81506457-1611e580-92bc-11ea-927e-b826c56ba21b.png)
-> Blogifier publishes `Blogifier.Core` shared library to the Nuget gallery.
-This package is used by Blogifier.SPA and can be used by any other application.
-
-## Demo site
-
-The [demo site](http://blogifier.net) is a playground to check out Blogifier features. You can write and publish posts, upload files and test application before install.
-
-![philosophy](https://user-images.githubusercontent.com/1932785/81521511-0e2e6180-930d-11ea-8ad5-35d3cf2b6e8c.jpg)
-
-The [developer's blog](http://rtur.net/blog).
