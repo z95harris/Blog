@@ -13,7 +13,7 @@ The blog is a forked customized version of Blogifier. [Blogifier](https://github
 
 ## Getting Started
 
-1. Clone or download source code [Here](https://github.com/z95harris/Blog)
+1. Clone or download source code [Here](https://github.com/blogifierdotnet)
 2. Run application in Visual Studio or using your code editor
 3. Use admin/admin to log in
 
